@@ -1,0 +1,33 @@
+{
+  "tasks": [
+    {
+      "id": "be",
+      "writes": [
+        "src/orders.py"
+      ]
+    },
+    {
+      "id": "fe",
+      "writes": [
+        "web/orders.tsx"
+      ]
+    },
+    {
+      "id": "integration",
+      "depends_on": [
+        "be",
+        "fe"
+      ],
+      "writes": [
+        "tests/orders.test.py"
+      ]
+    },
+    {
+      "id": "review",
+      "depends_on": [
+        "integration"
+      ],
+      "writes": []
+    }
+  ]
+}

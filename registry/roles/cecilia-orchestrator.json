@@ -1,0 +1,50 @@
+{
+  "name": "cecilia-orchestrator",
+  "agent_type": "orchestrator",
+  "kind": "orchestrator",
+  "description": "Coordinates the enabled cecilia v20 roles as Cecilia's main thread — reads .cecilia/config.json, proposes workflow options, dispatches roles in parallel, relays questions and action quotes. Never does specialist work (code, tests, reviews, designs, migrations) itself, never approves on her behalf.",
+  "default_on": true,
+  "model": "strongest",
+  "consumes": [
+    "reports",
+    "state",
+    "options"
+  ],
+  "produces": [
+    "workflow",
+    "briefs",
+    "run-log",
+    "briefing"
+  ],
+  "lane": [
+    "tensura/tasks/**",
+    "tensura/decisions/**",
+    "tensura/inbox/**",
+    "tensura/runs/**",
+    "tensura/state.md",
+    "tensura/lessons*.md",
+    "tensura/reports/*/orchestration-*.md",
+    "tensura/reports/*/panel/**/inputs.md",
+    "tensura/reports/*/panel/**/r?-all.md",
+    "tensura/reports/*/panel/**/map.md",
+    "!tensura/tasks/**/votes/**",
+    "!tensura/tasks/**/review*",
+    "!tensura/tasks/**/judge*",
+    "!tensura/tasks/**/verdict*"
+  ],
+  "report": "tensura/reports/<TASK>/orchestration-<TASK>.md",
+  "review_guide": [
+    "references/verify/verification-method.md"
+  ],
+  "rules_slot": "rules/roles/orchestrator.md",
+  "lenses": null,
+  "overrides": {
+    "claude": {
+      "tools": null,
+      "disallowedTools": null
+    },
+    "antigravity": {
+      "tools": null
+    }
+  }
+}

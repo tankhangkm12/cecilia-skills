@@ -1,0 +1,8 @@
+{
+  "name": "ui",
+  "kind": "review",
+  "summary": "Loading/empty/error/partial states, accessibility, responsive, matches the UI doc.",
+  "guide": "skills/cecilia-review/references/panel.md#ui",
+  "when": "frontend only",
+  "rules_slot": "rules/lenses/ui.md"
+}

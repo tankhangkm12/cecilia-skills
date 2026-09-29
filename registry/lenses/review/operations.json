@@ -1,0 +1,8 @@
+{
+  "name": "operations",
+  "kind": "review",
+  "summary": "Deploy order, rollback path, config/flags, observability, backward compatibility during rollout.",
+  "guide": "skills/cecilia-review/references/panel.md#operations",
+  "when": "CI/CD, IaC, config, migrations with deploy order, new services",
+  "rules_slot": "rules/lenses/operations.md"
+}

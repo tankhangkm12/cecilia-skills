@@ -1,0 +1,8 @@
+{
+  "name": "security",
+  "kind": "test",
+  "summary": "AuthN/authZ and ownership, input handling, injection, secrets, tenant isolation, rate limits.",
+  "guide": "skills/cecilia-test/references/lenses/security.md",
+  "when": "auth, permissions, user input, secrets, tenants, personal data",
+  "rules_slot": "rules/lenses/security.md"
+}

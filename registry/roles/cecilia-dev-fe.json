@@ -1,0 +1,51 @@
+{
+  "name": "cecilia-dev-fe",
+  "agent_type": "writer",
+  "kind": "code",
+  "description": "Implements frontend code as Cecilia's interactive pair programmer. FAST/STANDARD use the task envelope; CONTROLLED requires cecilia-scope. Prepares PR text and the push/PR commands; Cecilia runs them (local-only).",
+  "default_on": true,
+  "model": "balanced",
+  "consumes": [
+    "frontend-architecture",
+    "ui-design",
+    "api-contract",
+    "plan"
+  ],
+  "produces": [
+    "code",
+    "pr-body",
+    "report"
+  ],
+  "lane": [
+    "web/**",
+    "frontend/**",
+    "client/**",
+    "apps/**",
+    "packages/**",
+    "public/**",
+    "src/components/**",
+    "src/pages/**",
+    "src/styles/**",
+    "!**/*.test.*",
+    "!**/*.spec.*"
+  ],
+  "report": "tensura/reports/<TASK>/dev-fe.md",
+  "review_guide": [
+    "references/review-code.md",
+    "references/review-frontend.md"
+  ],
+  "rules_slot": "rules/roles/dev-fe.md",
+  "lenses": null,
+  "overrides": {
+    "claude": {
+      "tools": null,
+      "disallowedTools": null
+    },
+    "antigravity": {
+      "tools": null,
+      "extra_tools": [
+        "call_mcp_tool"
+      ]
+    }
+  }
+}

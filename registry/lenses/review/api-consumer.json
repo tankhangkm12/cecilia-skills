@@ -1,0 +1,8 @@
+{
+  "name": "api-consumer",
+  "kind": "review",
+  "summary": "Can a client use it correctly — shape, errors, pagination, retries, versioning? Is api-ux when that role is on.",
+  "guide": "skills/cecilia-review/references/panel.md#api-consumer",
+  "when": "public/internal API contract changes",
+  "rules_slot": "rules/lenses/api-consumer.md"
+}

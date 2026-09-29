@@ -1,0 +1,43 @@
+[project]
+name = "cecilia"
+version = "20.2.0"
+description = "Cecilia — controlled agent skills for Claude Code and Antigravity, installed into a local-only workspace next to your project"
+readme = "README.md"
+requires-python = ">=3.10"                # uv installs a current Python; the scripts themselves still run on 3.9+
+license = { text = "Proprietary — see README" }
+dependencies = []                      # standard library only — uv brings the Python
+
+[project.scripts]
+cecilia = "cecilia.cli:main"
+
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cecilia"]
+
+# The package data keeps the repository layout under cecilia/_data/, so every tool finds its files the same way
+# whether it runs from a clone (`uv run cecilia …`) or from `uv tool install git+…`.
+[tool.hatch.build.targets.wheel.force-include]
+"skills" = "cecilia/_data/skills"
+"shared" = "cecilia/_data/shared"
+"guard" = "cecilia/_data/guard"
+"adapters" = "cecilia/_data/adapters"
+"tools" = "cecilia/_data/tools"
+"docs" = "cecilia/_data/docs"
+"examples" = "cecilia/_data/examples"
+"registry" = "cecilia/_data/registry"
+"templates" = "cecilia/_data/templates"
+"README.md" = "cecilia/_data/README.md"
+"CHANGELOG.md" = "cecilia/_data/CHANGELOG.md"
+"THIRD-PARTY.md" = "cecilia/_data/THIRD-PARTY.md"
+
+[tool.hatch.build.targets.sdist]
+exclude = ["dist", ".venv", "**/__pycache__"]
+
+[tool.uv]
+package = true
+
+[tool.hatch.build]
+exclude = ["**/__pycache__", "**/*.pyc"]

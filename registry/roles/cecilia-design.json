@@ -1,0 +1,45 @@
+{
+  "name": "cecilia-design",
+  "agent_type": "writer",
+  "kind": "docs",
+  "description": "Writes architecture, module design, API contract, frontend architecture and threat model under tensura/docs. Options for Cecilia, never decisions.",
+  "default_on": true,
+  "model": "strongest",
+  "consumes": [
+    "requirements",
+    "as-built"
+  ],
+  "produces": [
+    "architecture",
+    "module-design",
+    "api-contract",
+    "frontend-architecture",
+    "security",
+    "decisions",
+    "report"
+  ],
+  "lane": [
+    "tensura/docs/**"
+  ],
+  "report": "tensura/reports/<TASK>/design.md",
+  "review_guide": [
+    "references/review-design.md",
+    "references/review-frontend.md",
+    "references/security/threat-model.md",
+    "references/security/authz-matrix.md"
+  ],
+  "rules_slot": "rules/roles/design.md",
+  "lenses": null,
+  "overrides": {
+    "claude": {
+      "tools": null,
+      "disallowedTools": [
+        "Agent",
+        "NotebookEdit"
+      ]
+    },
+    "antigravity": {
+      "tools": null
+    }
+  }
+}

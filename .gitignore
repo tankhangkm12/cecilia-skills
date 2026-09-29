@@ -1,0 +1,9 @@
+# Cecilia package repository (this is what you push). Workspaces (<project>.cecilia/) are never in here.
+__pycache__/
+*.pyc
+dist/
+build/
+.venv/
+*.egg-info/
+uv.lock
+evals-results*.json

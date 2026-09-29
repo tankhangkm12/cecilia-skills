@@ -1,0 +1,47 @@
+{
+  "name": "cecilia-discovery",
+  "agent_type": "writer",
+  "kind": "docs",
+  "description": "Onboards an existing codebase into as-built docs, or turns an idea into the idea and requirements docs. Reads code, writes only under tensura/.",
+  "default_on": true,
+  "model": "strongest",
+  "consumes": [
+    "brief",
+    "repo",
+    "existing-docs"
+  ],
+  "produces": [
+    "system-map",
+    "idea",
+    "requirements",
+    "as-built",
+    "conventions",
+    "report"
+  ],
+  "lane": [
+    "tensura/docs/**",
+    "tensura/conventions.md"
+  ],
+  "report": "tensura/reports/<TASK>/discovery.md",
+  "review_guide": [
+    "references/review-design.md",
+    "references/review-asbuilt.md"
+  ],
+  "rules_slot": "rules/roles/discovery.md",
+  "lenses": null,
+  "overrides": {
+    "claude": {
+      "tools": null,
+      "disallowedTools": [
+        "Agent",
+        "NotebookEdit"
+      ]
+    },
+    "antigravity": {
+      "tools": null,
+      "extra_tools": [
+        "call_mcp_tool"
+      ]
+    }
+  }
+}

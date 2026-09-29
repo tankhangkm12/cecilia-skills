@@ -1,0 +1,8 @@
+{
+  "name": "security",
+  "kind": "review",
+  "summary": "AuthN/authZ and ownership (IDOR), injection, input validation, secrets, personal data, CORS, rate limits.",
+  "guide": "skills/cecilia-review/references/panel.md#security",
+  "when": "auth, permissions, user input, secrets, personal data, external calls",
+  "rules_slot": "rules/lenses/security.md"
+}

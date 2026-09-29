@@ -1,0 +1,29 @@
+# CI for the Cecilia package itself (this repository). Never installed into projects.
+name: cecilia-ci
+on: [push, pull_request]
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python: ["3.9", "3.13"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Validate package
+        run: uv run --no-project python tools/validate.py
+      - name: Token budgets
+        run: uv run --no-project python tools/tokens.py --check
+      - name: Guard corpus (release gate)
+        run: uv run --no-project python tools/guard_corpus.py
+      - name: Tests
+        run: uv run --no-project python -m unittest discover -s tests -v
+      - name: uv tool install smoke
+        run: |
+          uv tool install --force .
+          cecilia --version
+          cecilia where

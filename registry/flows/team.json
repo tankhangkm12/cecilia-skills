@@ -1,0 +1,30 @@
+{
+  "name": "team",
+  "summary": "Cecilia works in a team: ticket intake, branch/commit/PR-template rules, escalation to the leader, docs export, PR size limit, reading review comments.",
+  "rules_slot": "rules/flows/team.md",
+  "guide": "shared/flows/team.md",
+  "steps": [
+    "intake",
+    "plan",
+    "approve",
+    "dispatch",
+    "review",
+    "handoff",
+    "finish"
+  ],
+  "settings": {
+    "tracker": "none",
+    "branch_pattern": "feature/{ticket}-{slug}",
+    "pr_template": ".github/pull_request_template.md",
+    "commit_pattern": "^(feat|fix|chore|docs|refactor|test|perf|ci|build)(\\([^)]+\\))?!?: .+",
+    "max_pr_lines": 400,
+    "docs_export": "",
+    "escalate": [
+      "architecture",
+      "public-contract",
+      "schema",
+      "dependency",
+      "security"
+    ]
+  }
+}

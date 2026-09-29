@@ -1,0 +1,8 @@
+{
+  "name": "{{name}}",
+  "kind": "{{kind}}",
+  "summary": "{{summary}}",
+  "guide": "{{guide}}",
+  "when": "{{when}}",
+  "rules_slot": "rules/lenses/{{name}}.md"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "cecilia-extend",
+  "agent_type": "writer",
+  "kind": "docs",
+  "description": "Scaffolds a new Cecilia role, flow or lens from templates, validates it and proposes it under tensura/extensions/ for Cecilia to apply. Never applies it.",
+  "default_on": true,
+  "model": "strongest",
+  "consumes": [
+    "request",
+    "registry",
+    "templates"
+  ],
+  "produces": [
+    "extension-proposal",
+    "report"
+  ],
+  "lane": [
+    "tensura/extensions/**"
+  ],
+  "report": "tensura/reports/<TASK>/extend.md",
+  "review_guide": [
+    "references/verify/verification-method.md"
+  ],
+  "rules_slot": "rules/roles/extend.md",
+  "lenses": null,
+  "overrides": {
+    "claude": {
+      "tools": null,
+      "disallowedTools": [
+        "Agent",
+        "NotebookEdit"
+      ]
+    },
+    "antigravity": {
+      "tools": null
+    }
+  }
+}

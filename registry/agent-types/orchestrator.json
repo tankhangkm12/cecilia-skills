@@ -1,0 +1,42 @@
+{
+  "name": "orchestrator",
+  "summary": "Cecilia's main thread. Proposes workflow options, dispatches roles, reads their reports, relays questions and action quotes. Writes only under the workspace tensura/; never does specialist work.",
+  "writes": "tensura-only",
+  "may_dispatch": true,
+  "main_thread": true,
+  "claude": {
+    "tools": [
+      "Read",
+      "Grep",
+      "Glob",
+      "Edit",
+      "Write",
+      "Bash",
+      "AskUserQuestion",
+      "WebSearch",
+      "WebFetch"
+    ],
+    "disallowedTools": []
+  },
+  "antigravity": {
+    "tools": [
+      "view_file",
+      "list_dir",
+      "find_by_name",
+      "grep_search",
+      "write_to_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "run_command",
+      "search_web",
+      "read_url_content",
+      "invoke_subagent",
+      "manage_subagents",
+      "send_message",
+      "ask_question",
+      "manage_task"
+    ],
+    "commandExecutionPolicy": "sandbox",
+    "model": "pro"
+  }
+}

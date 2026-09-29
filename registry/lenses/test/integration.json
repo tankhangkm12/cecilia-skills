@@ -1,0 +1,8 @@
+{
+  "name": "integration",
+  "kind": "test",
+  "summary": "Services talking to each other: contracts, adapters, queues, migrations applied to a local DB.",
+  "guide": "skills/cecilia-test/references/lenses/integration.md",
+  "when": "API contract, service boundaries, external calls, migrations",
+  "rules_slot": "rules/lenses/integration.md"
+}

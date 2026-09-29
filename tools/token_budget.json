@@ -1,0 +1,161 @@
+{
+  "note": "v19 scenarios: files each role reads for a typical task (SKILL card + core-min + the step's references). v18.1 baseline measured on the same tasks: standard-frontend-feature 258 KB, backend-bugfix 49 KB, db-slow-query 44 KB; descriptions 9.7 KB; mandatory 19-25 KB per role. v20: standard-feature-v20 = orchestrator (options + workflow + briefs + panel run) + one dev-be + one cecilia-test lens + one reviewer lens; each extra agent of a kind adds that role's column again.",
+  "reread_exempt": [
+    "core-min.md"
+  ],
+  "reread_exempt_why": "core-min is the always-loaded L2 prefix every role needs in its own context; it is identical across calls so prompt caching serves it (token plan T8). Re-reads of every other shared file count.",
+  "scenarios": {
+    "standard-frontend-feature": {
+      "cecilia-orchestrator": [
+        "SKILL.md",
+        "references/common/core-min.md",
+        "references/workflow.md",
+        "references/agent-briefs.md",
+        "references/brief-roles.md"
+      ],
+      "cecilia-plan": [
+        "SKILL.md",
+        "references/common/core-min.md",
+        "references/workflow.md",
+        "references/common/git.md"
+      ],
+      "cecilia-dev-fe": [
+        "SKILL.md",
+        "references/common/core-min.md",
+        "references/workflow.md",
+        "references/common/code-quality.md",
+        "references/code/principles.md",
+        "references/code/checklist.md",
+        "references/stacks/frontend-react.md",
+        "references/visual-check.md",
+        "references/web-interface-guidelines.md",
+        "references/common/git-handoff.md"
+      ],
+      "cecilia-test": [
+        "SKILL.md",
+        "references/common/core-min.md",
+        "references/workflow.md",
+        "references/common/git.md",
+        "references/test-design.md"
+      ],
+      "cecilia-review": [
+        "SKILL.md",
+        "references/common/core-min.md",
+        "references/workflow.md",
+        "references/review-code.md",
+        "references/review-frontend.md",
+        "references/code-standards.md"
+      ]
+    },
+    "backend-bugfix": {
+      "cecilia-dev-be": [
+        "SKILL.md",
+        "references/common/core-min.md",
+        "references/workflow.md",
+        "references/common/git.md",
+        "references/common/code-quality.md",
+        "references/code/principles.md",
+        "references/workflows/bugfix.md",
+        "references/code/checklist.md"
+      ]
+    },
+    "db-slow-query": {
+      "cecilia-db": [
+        "SKILL.md",
+        "references/common/core-min.md",
+        "references/common/git.md",
+        "references/common/numbers.md",
+        "references/performance.md",
+        "references/engines/postgresql.md"
+      ]
+    },
+    "db-growth-and-engine": {
+      "cecilia-db": [
+        "SKILL.md",
+        "references/common/core-min.md",
+        "references/common/numbers.md",
+        "references/common/decisions.md",
+        "references/growth-forecast.md",
+        "references/scaling-ladder.md",
+        "references/engine-selection.md"
+      ]
+    },
+    "api-ux-review": {
+      "cecilia-api-ux": [
+        "SKILL.md",
+        "references/common/core-min.md",
+        "references/method.md",
+        "references/consumer-journeys.md",
+        "references/contention.md",
+        "references/dx-checklist.md"
+      ]
+    },
+    "controlled-review-panel": {
+      "cecilia-orchestrator": [
+        "SKILL.md",
+        "references/common/core-min.md",
+        "references/panel-run.md",
+        "references/brief-roles.md",
+        "assets/panel-brief-blocks.md"
+      ],
+      "cecilia-review": [
+        "SKILL.md",
+        "references/common/core-min.md",
+        "references/panel.md",
+        "references/review-code.md",
+        "assets/panel-finding-template.md"
+      ]
+    },
+    "standard-feature-v20": {
+      "cecilia-orchestrator": [
+        "SKILL.md",
+        "references/common/core-min.md",
+        "references/workflow.md",
+        "references/presets.md",
+        "assets/options-template.md",
+        "references/agent-briefs.md",
+        "assets/agent-brief-template.md",
+        "references/panel-run.md"
+      ],
+      "cecilia-dev-be": [
+        "SKILL.md",
+        "references/common/core-min.md",
+        "references/workflow.md",
+        "references/common/code-quality.md",
+        "references/code/principles.md",
+        "references/code/checklist.md",
+        "references/common/git-handoff.md"
+      ],
+      "cecilia-test": [
+        "SKILL.md",
+        "references/common/core-min.md",
+        "references/workflow.md",
+        "references/test-design.md",
+        "references/lenses/functional.md"
+      ],
+      "cecilia-review": [
+        "SKILL.md",
+        "references/common/core-min.md",
+        "references/panel.md",
+        "references/review-code.md",
+        "references/code-standards.md"
+      ]
+    }
+  },
+  "budgets": {
+    "description_bytes": 500,
+    "descriptions_total_bytes": 5850,
+    "mandatory_bytes": 10700,
+    "reread_share_max": 0.1,
+    "scenario_bytes": {
+      "standard-frontend-feature": 192000,
+      "backend-bugfix": 46000,
+      "db-slow-query": 29000,
+      "db-growth-and-engine": 33000,
+      "api-ux-review": 22000,
+      "controlled-review-panel": 59500,
+      "standard-feature-v20": 155000
+    },
+    "why": "Targets from the token plan: descriptions ≤ 450 B each and ≤ 5.85 KB for 13 skills (v20 adds cecilia-extend), mandatory ≈ 2.6k tok per role, re-read ≤ 10%; scenario budgets = measured + ~4% so growth fails CI. v20 re-measured with the shared files synced: core-min grew ~0.5 KB (lanes, rules, HANDOFF, orchestrator-only invariants), so mandatory 10.0 → 10.7 KB and the v19 scenarios +2–5%."
+  }
+}

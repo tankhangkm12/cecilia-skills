@@ -1,0 +1,8 @@
+{
+  "name": "database",
+  "kind": "test",
+  "summary": "Schema, constraints, query plans, migration up/down and backfill on a local copy.",
+  "guide": "skills/cecilia-test/references/lenses/database.md",
+  "when": "schema/migrations, new queries, indexes, DB-side code",
+  "rules_slot": "rules/lenses/database.md"
+}

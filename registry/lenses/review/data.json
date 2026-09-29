@@ -1,0 +1,8 @@
+{
+  "name": "data",
+  "kind": "review",
+  "summary": "Transaction scope, races, migrations (locks, backfill, rollback), idempotency of retries and consumers.",
+  "guide": "skills/cecilia-review/references/panel.md#data",
+  "when": "DB code, schema/migrations, queues, money/stock/quota",
+  "rules_slot": "rules/lenses/data.md"
+}

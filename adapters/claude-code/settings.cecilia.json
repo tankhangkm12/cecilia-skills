@@ -1,0 +1,137 @@
+{
+  "agent": "cecilia-orchestrator",
+  "permissions": {
+    "defaultMode": "default",
+    "allow": [
+      "Bash(git status *)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git show *)",
+      "Bash(git branch --show-current)",
+      "Bash(git rev-parse *)",
+      "Bash(git fetch *)",
+      "Bash(ls *)",
+      "Bash(pwd)"
+    ],
+    "ask": [
+      "Bash(git push *)",
+      "Bash(gh pr create *)",
+      "Bash(gh pr edit *)",
+      "Bash(gh pr comment *)",
+      "Bash(gh pr ready *)",
+      "Bash(glab mr create *)",
+      "Bash(npm install *)",
+      "Bash(pnpm add *)",
+      "Bash(yarn add *)",
+      "Bash(pip install *)",
+      "Bash(kubectl *)",
+      "Bash(helm *)",
+      "Bash(terraform apply *)",
+      "Bash(terraform plan *)",
+      "Bash(rm *)",
+      "Bash(npx skills *)",
+      "Bash(playwright-cli install*)",
+      "Bash(npx playwright install*)",
+      "PowerShell(git push *)",
+      "PowerShell(gh pr create *)",
+      "PowerShell(gh pr edit *)",
+      "PowerShell(gh pr comment *)",
+      "PowerShell(gh pr ready *)",
+      "PowerShell(glab mr create *)",
+      "PowerShell(npm install *)",
+      "PowerShell(pnpm add *)",
+      "PowerShell(yarn add *)",
+      "PowerShell(pip install *)",
+      "PowerShell(kubectl *)",
+      "PowerShell(helm *)",
+      "PowerShell(terraform apply *)",
+      "PowerShell(terraform plan *)",
+      "PowerShell(rm *)",
+      "PowerShell(npx skills *)",
+      "PowerShell(playwright-cli install*)",
+      "PowerShell(npx playwright install*)"
+    ],
+    "deny": [
+      "Bash(gh pr merge *)",
+      "Bash(glab mr merge *)",
+      "Bash(git push --force *)",
+      "Bash(git push -f *)",
+      "Bash(npm publish *)",
+      "Bash(gh release *)",
+      "Bash(gh secret *)",
+      "Bash(terraform destroy *)",
+      "Read(**/.env)",
+      "Read(**/.env.local)",
+      "Read(**/.env.*.local)",
+      "Read(**/.env.production)",
+      "Read(**/.env.prod)",
+      "Read(**/.env.staging)",
+      "Read(**/.env.development)",
+      "Read(**/.env.test)",
+      "Read(**/*.pem)",
+      "Read(**/*.key)",
+      "Read(**/id_rsa*)",
+      "Read(**/id_ed25519*)",
+      "Read(**/*.p12)",
+      "Read(**/*.pfx)",
+      "Read(**/credentials.json)",
+      "Read(**/secrets.yaml)",
+      "Read(**/secrets.yml)",
+      "Read(**/secrets.json)",
+      "Read(**/.npmrc)",
+      "Read(**/.pypirc)",
+      "Read(**/.netrc)",
+      "Edit(/.cecilia/**)",
+      "Edit(/.claude/settings.json)",
+      "Edit(/.claude/settings.local.json)",
+      "Edit(/.claude/hooks/**)",
+      "Edit(/.claude/agents/**)",
+      "Edit(/.claude/skills/**)",
+      "Edit(/.mcp.json)",
+      "Edit(/.playwright/cli.config.json)",
+      "PowerShell(gh pr merge *)",
+      "PowerShell(glab mr merge *)",
+      "PowerShell(git push --force *)",
+      "PowerShell(git push -f *)",
+      "PowerShell(npm publish *)",
+      "PowerShell(gh release *)",
+      "PowerShell(gh secret *)",
+      "PowerShell(terraform destroy *)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|PowerShell|Edit|Write|MultiEdit|NotebookEdit|Agent|Task|mcp__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "__CECILIA_PYTHON__",
+            "args": [
+              "__CECILIA_GUARD__",
+              "--host",
+              "claude"
+            ],
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "__CECILIA_PYTHON__",
+            "args": [
+              "__CECILIA_GUARD__",
+              "--host",
+              "claude"
+            ],
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "functional",
+  "kind": "test",
+  "summary": "Acceptance criteria, edge cases and negative paths of the requested behaviour.",
+  "guide": "skills/cecilia-test/references/lenses/functional.md",
+  "when": "always — every behaviour change",
+  "rules_slot": "rules/lenses/functional.md"
+}

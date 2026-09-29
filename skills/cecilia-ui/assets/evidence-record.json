@@ -1,0 +1,18 @@
+{
+  "task_id": "",
+  "role": "",
+  "instance": "",
+  "timestamp_utc": "",
+  "source_sha": "",
+  "integration_candidate": "",
+  "contract_version": "",
+  "artifact_digest": "",
+  "environment": "local",
+  "command_or_method": "",
+  "exit_code": null,
+  "result": "UNVERIFIED",
+  "counts": {"passed": null, "failed": null, "skipped": null, "flaky": null},
+  "raw_evidence": [],
+  "limitations": [],
+  "findings": []
+}

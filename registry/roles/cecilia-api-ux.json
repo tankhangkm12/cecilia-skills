@@ -1,0 +1,50 @@
+{
+  "name": "cecilia-api-ux",
+  "agent_type": "reviewer",
+  "kind": "docs",
+  "description": "Plays the API's consumers (frontend/mobile developer, end user, third party) and measures calls per screen, complexity, conflict and rejection rates, failure handling and breaking changes. Read-only on code; writes only its report under tensura/.",
+  "default_on": true,
+  "model": "strongest",
+  "consumes": [
+    "api-contract",
+    "requirements",
+    "frontend-architecture",
+    "code",
+    "database-doc"
+  ],
+  "produces": [
+    "api-ux-report"
+  ],
+  "lane": [],
+  "report": "tensura/reports/<TASK>/api-ux.md",
+  "review_guide": [
+    "references/review-design.md",
+    "references/verify/verification-method.md"
+  ],
+  "rules_slot": "rules/roles/api-ux.md",
+  "lenses": null,
+  "overrides": {
+    "claude": {
+      "tools": "inherit",
+      "disallowedTools": [
+        "Agent",
+        "NotebookEdit"
+      ]
+    },
+    "antigravity": {
+      "tools": [
+        "view_file",
+        "list_dir",
+        "find_by_name",
+        "grep_search",
+        "write_to_file",
+        "replace_file_content",
+        "multi_replace_file_content",
+        "run_command",
+        "search_web",
+        "read_url_content"
+      ],
+      "commandExecutionPolicy": "sandbox"
+    }
+  }
+}

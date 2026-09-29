@@ -1,0 +1,8 @@
+{
+  "name": "performance",
+  "kind": "review",
+  "summary": "N+1, unbounded queries, missing indexes, per-row work in loops, memory growth on hot paths.",
+  "guide": "skills/cecilia-review/references/panel.md#performance",
+  "when": "queries, list endpoints, loops over data, caching, hot paths",
+  "rules_slot": "rules/lenses/performance.md"
+}

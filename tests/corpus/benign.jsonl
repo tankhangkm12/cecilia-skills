@@ -1,0 +1,127 @@
+{"cmd": "npm test", "want": "allow"}
+{"cmd": "npm run lint", "want": "allow"}
+{"cmd": "npm run build", "want": "allow"}
+{"cmd": "npm run dev", "want": "allow"}
+{"cmd": "npm run typecheck", "want": "allow"}
+{"cmd": "npm run test:e2e", "want": "allow"}
+{"cmd": "pnpm test", "want": "allow"}
+{"cmd": "yarn test", "want": "allow"}
+{"cmd": "pnpm lint", "want": "allow"}
+{"cmd": "npx eslint src", "want": "allow"}
+{"cmd": "npx vite build", "want": "allow"}
+{"cmd": "npx tsc --noEmit", "want": "allow"}
+{"cmd": "npx prisma generate", "want": "allow"}
+{"cmd": "npx prisma migrate dev --name init", "want": "allow"}
+{"cmd": "npx jest --watch=false", "want": "allow"}
+{"cmd": "npx playwright test", "want": "allow"}
+{"cmd": "npx vitest run", "want": "allow"}
+{"cmd": "git status", "want": "allow"}
+{"cmd": "git diff", "want": "allow"}
+{"cmd": "git diff --stat", "want": "allow"}
+{"cmd": "git log --oneline -10", "want": "allow"}
+{"cmd": "git show HEAD", "want": "allow"}
+{"cmd": "git branch", "want": "allow"}
+{"cmd": "git branch -a", "want": "allow"}
+{"cmd": "git switch -c feature/T2-x", "want": "allow"}
+{"cmd": "git checkout -b fix/y", "want": "allow"}
+{"cmd": "git checkout feature/T1-demo", "want": "allow"}
+{"cmd": "git add -A", "want": "allow"}
+{"cmd": "git add src/app.ts", "want": "allow"}
+{"cmd": "git commit -m \"feat: add button\"", "want": "allow"}
+{"cmd": "git restore --staged src/app.ts", "want": "allow"}
+{"cmd": "git stash", "want": "allow"}
+{"cmd": "git stash pop", "want": "allow"}
+{"cmd": "git fetch", "want": "allow"}
+{"cmd": "git fetch origin", "want": "allow"}
+{"cmd": "git rev-parse HEAD", "want": "allow"}
+{"cmd": "git log origin/develop..HEAD", "want": "allow"}
+{"cmd": "git rebase --abort", "want": "allow"}
+{"cmd": "git worktree add .worktrees/be-B01 -b feature/T1-01-be", "want": "allow"}
+{"cmd": "git worktree list", "want": "allow"}
+{"cmd": "git blame src/app.ts", "want": "allow"}
+{"cmd": "git config --get remote.origin.url", "want": "allow"}
+{"cmd": "git config user.name", "want": "allow"}
+{"cmd": "git remote -v", "want": "allow"}
+{"cmd": "gh pr list", "want": "allow"}
+{"cmd": "gh pr view 3", "want": "allow"}
+{"cmd": "gh pr checks 3", "want": "allow"}
+{"cmd": "gh issue list", "want": "allow"}
+{"cmd": "gh run list", "want": "allow"}
+{"cmd": "gh api repos/o/r/pulls", "want": "allow"}
+{"cmd": "gh pr diff 3", "want": "allow"}
+{"cmd": "cat README.md", "want": "allow"}
+{"cmd": "cat .env.example", "want": "allow"}
+{"cmd": "ls -la", "want": "allow"}
+{"cmd": "ls src", "want": "allow"}
+{"cmd": "grep -rn TODO src", "want": "allow"}
+{"cmd": "rg useState src", "want": "allow"}
+{"cmd": "find src -name '*.ts'", "want": "allow"}
+{"cmd": "head -n 20 src/app.ts", "want": "allow"}
+{"cmd": "wc -l src/app.ts", "want": "allow"}
+{"cmd": "mkdir -p src/components", "want": "allow"}
+{"cmd": "touch src/components/Button.tsx", "want": "allow"}
+{"cmd": "cp src/app.ts src/app2.ts", "want": "allow"}
+{"cmd": "mv src/app2.ts src/app3.ts", "want": "allow"}
+{"cmd": "echo x > src/notes.md", "want": "allow"}
+{"cmd": "sed -i 's/foo/bar/' src/app.ts", "want": "allow"}
+{"cmd": "tee src/out.txt < src/app.ts", "want": "allow"}
+{"cmd": "python3 -m pytest -q", "want": "allow"}
+{"cmd": "python3 manage.py migrate", "want": "allow"}
+{"cmd": "python3 manage.py runserver", "want": "allow"}
+{"cmd": "pytest -q", "want": "allow"}
+{"cmd": "ruff check .", "want": "allow"}
+{"cmd": "black --check .", "want": "allow"}
+{"cmd": "go test ./...", "want": "allow"}
+{"cmd": "cargo test", "want": "allow"}
+{"cmd": "mvn -q test", "want": "allow"}
+{"cmd": "./gradlew test", "want": "allow"}
+{"cmd": "docker compose up -d", "want": "allow"}
+{"cmd": "docker compose ps", "want": "allow"}
+{"cmd": "docker compose logs api", "want": "allow"}
+{"cmd": "docker build -t api:dev .", "want": "allow"}
+{"cmd": "docker compose down", "want": "allow"}
+{"cmd": "node scripts/check.js", "want": "allow"}
+{"cmd": "python3 scripts/seed_local.py", "want": "allow"}
+{"cmd": "curl http://localhost:3000/health", "want": "allow"}
+{"cmd": "curl -s https://registry.npmjs.org/react", "want": "allow"}
+{"cmd": "playwright-cli open http://localhost:5173 --config=.playwright/cli.config.json", "want": "allow"}
+{"cmd": "kubectl version --client", "want": "allow"}
+{"cmd": "terraform fmt", "want": "allow"}
+{"cmd": "terraform validate", "want": "allow"}
+{"cmd": "helm lint charts/api", "want": "allow"}
+{"cmd": "helm template charts/api", "want": "allow"}
+{"cmd": "wrangler dev", "want": "allow"}
+{"cmd": "supabase start", "want": "allow"}
+{"cmd": "vercel dev", "want": "allow"}
+{"cmd": "docker compose --env-file .env up -d", "want": "allow"}
+{"cmd": "node --env-file=.env server.js", "want": "allow"}
+{"cmd": "ls .env", "want": "allow"}
+{"cmd": "git check-ignore .env", "want": "allow"}
+{"cmd": "git rm --cached .env", "want": "allow"}
+{"cmd": "python3 .cecilia/bin/cecilia_guard.py --explain \"git push\"", "want": "allow"}
+{"cmd": "echo done", "want": "allow"}
+{"cmd": "sleep 1", "want": "allow"}
+{"cmd": "pwd", "want": "allow"}
+{"cmd": "which node", "want": "allow"}
+{"cmd": "npm run build 2>&1 | tail -20", "want": "allow"}
+{"cmd": "npm test > /tmp/test.log 2>&1", "want": "allow"}
+{"cmd": "npx knex migrate:latest", "want": "allow"}
+{"cmd": "python -m alembic upgrade head", "want": "allow"}
+{"cmd": "rails db:migrate", "want": "allow"}
+{"cmd": "python3 scripts/release_notes_check.py --help", "want": "allow"}
+{"cmd": "cd src && ls", "want": "allow"}
+{"cmd": "git merge feature/T1-sub", "want": "allow"}
+{"cmd": "git rebase develop", "want": "allow"}
+{"cmd": "git cherry-pick abc1234", "want": "allow"}
+{"cmd": "cecilia doctor", "want": "allow"}
+{"cmd": "cecilia mode --show", "want": "allow"}
+{"cmd": "uv tool list", "want": "allow"}
+{"cmd": "uv run pytest -q", "want": "allow"}
+{"cmd": "cecilia rules list", "want": "allow"}
+{"cmd": "cecilia rules show", "want": "allow"}
+{"cmd": "cecilia rules lint", "want": "allow"}
+{"cmd": "cecilia extension check tensura/extensions/x", "want": "allow"}
+{"cmd": "cecilia extension list", "want": "allow"}
+{"cmd": "cat rules/_project.md", "want": "allow"}
+{"cmd": "grep -rn PR- rules/", "want": "allow"}
+{"cmd": "echo notes > tensura/reports/T1/dev-be.md", "want": "allow"}

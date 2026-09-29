@@ -1,0 +1,45 @@
+{"cmd": "git log --grep push --oneline", "want": "allow"}
+{"cmd": "grep -rn \"rm -rf\" docs/", "want": "allow"}
+{"cmd": "npm run build", "want": "allow"}
+{"cmd": "cat README.md", "want": "allow"}
+{"cmd": "git commit -m \"fix push notification retry\"", "want": "allow"}
+{"cmd": "pytest -k deploy -q", "want": "allow"}
+{"cmd": "git diff main...HEAD --stat", "want": "allow"}
+{"cmd": "git fetch origin", "want": "allow"}
+{"cmd": "git branch -a", "want": "allow"}
+{"cmd": "git switch -c feature/T1-demo-followup", "want": "allow"}
+{"cmd": "git show HEAD:src/push/service.ts", "want": "allow"}
+{"cmd": "rg \"publish\" src/events/", "want": "allow"}
+{"cmd": "cat .github/workflows/ci.yml", "want": "allow"}
+{"cmd": "cat Dockerfile", "want": "allow"}
+{"cmd": "cat .env.example", "want": "allow"}
+{"cmd": "npm test -- --grep \"delete user\"", "want": "allow"}
+{"cmd": "npm run lint", "want": "allow"}
+{"cmd": "pnpm exec tsc --noEmit", "want": "allow"}
+{"cmd": "docker build -t acme/api:dev .", "want": "allow"}
+{"cmd": "python -m pytest tests/test_migrations.py", "want": "allow"}
+{"cmd": "git log -p -- migrations/", "want": "allow"}
+{"cmd": "git stash list", "want": "allow"}
+{"cmd": "git status --porcelain", "want": "allow"}
+{"cmd": "grep -n \"git push\" docs/CONTRIBUTING.md", "want": "allow"}
+{"cmd": "cargo test publish_", "want": "allow"}
+{"cmd": "go test ./... -run TestDeploy", "want": "allow"}
+{"cmd": "jq '.scripts' package.json", "want": "allow"}
+{"cmd": "git add src tests && git commit -m \"remove unused push code\"", "want": "allow"}
+{"cmd": "ruff check src tests", "want": "allow"}
+{"cmd": "npm run dev", "want": "allow"}
+{"cmd": "uvicorn app.main:app --reload --port 8000", "want": "allow"}
+{"cmd": "curl -s http://localhost:3000/health", "want": "allow"}
+{"cmd": "git grep -n \"DROP TABLE\" -- migrations/", "want": "allow"}
+{"cmd": "sed -n '1,40p' src/deploy/config.ts", "want": "allow"}
+{"cmd": "git log --oneline origin/main..HEAD", "want": "allow"}
+{"cmd": "git log --grep=\"npm publish\" --format='%h %s'", "want": "allow"}
+{"cmd": "grep -c \"\\.env\" .gitignore", "want": "allow"}
+{"cmd": "printf 'export const PUSH_TIMEOUT_MS = 30000;\\n' > src/config/push.ts", "want": "allow"}
+{"cmd": "find src -name \"*.test.ts\" -newer package.json", "want": "allow"}
+{"cmd": "Get-ChildItem -Recurse -Filter *.ps1 scripts | Select-String \"Remove-Item\"", "want": "allow"}
+{"cmd": "Get-Content README.md -TotalCount 20", "want": "allow"}
+{"cmd": "Select-String -Path src\\*.ts -Pattern \"git push\"", "want": "allow"}
+{"cmd": "Test-Path .\\dist", "want": "allow"}
+{"cmd": "git.exe status", "want": "allow"}
+{"cmd": "dotnet test --filter \"Category=Deploy\"", "want": "allow"}

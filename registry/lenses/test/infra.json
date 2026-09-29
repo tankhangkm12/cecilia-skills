@@ -1,0 +1,8 @@
+{
+  "name": "infra",
+  "kind": "test",
+  "summary": "Pipelines, images, manifests and IaC validated locally (lint, plan, dry-run) — never applied.",
+  "guide": "skills/cecilia-test/references/lenses/infra.md",
+  "when": "CI/CD, Dockerfiles, manifests, Terraform/Helm, config",
+  "rules_slot": "rules/lenses/infra.md"
+}

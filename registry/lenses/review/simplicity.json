@@ -1,0 +1,8 @@
+{
+  "name": "simplicity",
+  "kind": "review",
+  "summary": "Could this be done with less code, fewer layers, no new dependency? Over-engineering is SHOULD-FIX.",
+  "guide": "skills/cecilia-review/references/panel.md#simplicity",
+  "when": "new dependency, new layer/abstraction, large diff",
+  "rules_slot": "rules/lenses/simplicity.md"
+}

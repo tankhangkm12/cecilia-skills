@@ -1,0 +1,16 @@
+{
+  "name": "personal",
+  "summary": "Cecilia works alone on her own project (v19.2 behaviour): task from chat, local-only, she pushes and opens PRs herself.",
+  "rules_slot": "rules/flows/personal.md",
+  "guide": "shared/flows/personal.md",
+  "steps": [
+    "intake",
+    "plan",
+    "approve",
+    "dispatch",
+    "review",
+    "handoff",
+    "finish"
+  ],
+  "settings": {}
+}

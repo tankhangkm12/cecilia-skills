@@ -1,0 +1,36 @@
+{
+  "name": "cecilia-review",
+  "agent_type": "reviewer",
+  "kind": "read",
+  "description": "Independent read-only review of code, docs, plans, database, UI, infra, security, release and verify packets. Returns its report as text; edits nothing.",
+  "default_on": true,
+  "model": "strongest",
+  "consumes": [
+    "code",
+    "docs",
+    "plan",
+    "tests",
+    "test-results",
+    "reports"
+  ],
+  "produces": [
+    "review"
+  ],
+  "lane": [],
+  "report": "tensura/reports/<TASK>/review.md",
+  "review_guide": [
+    "references/verify/verification-method.md"
+  ],
+  "rules_slot": "rules/roles/review.md",
+  "lenses": "review",
+  "overrides": {
+    "claude": {
+      "tools": null,
+      "disallowedTools": null
+    },
+    "antigravity": {
+      "tools": null,
+      "model": "pro"
+    }
+  }
+}

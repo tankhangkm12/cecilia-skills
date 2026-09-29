@@ -1,0 +1,53 @@
+{
+  "name": "cecilia-ui",
+  "agent_type": "writer",
+  "kind": "design",
+  "description": "Designs the real user interface — flows, screens with every state, components and design tokens — in Penpot, Figma or Markdown as Cecilia chooses, and hands it to dev-fe. Writes to a design tool only as the guard allows.",
+  "default_on": false,
+  "model": "strongest",
+  "consumes": [
+    "requirements",
+    "frontend-architecture",
+    "api-contract"
+  ],
+  "produces": [
+    "ui-design",
+    "design-tokens",
+    "ui-exports",
+    "report"
+  ],
+  "lane": [
+    "tensura/docs/apps/**",
+    "**/ui-exports/**",
+    "**/design-tokens.json"
+  ],
+  "report": "tensura/reports/<TASK>/ui.md",
+  "review_guide": [
+    "references/review-ui.md"
+  ],
+  "rules_slot": "rules/roles/ui.md",
+  "lenses": null,
+  "overrides": {
+    "claude": {
+      "tools": null,
+      "disallowedTools": [
+        "Agent",
+        "Bash",
+        "NotebookEdit"
+      ]
+    },
+    "antigravity": {
+      "tools": [
+        "view_file",
+        "list_dir",
+        "find_by_name",
+        "grep_search",
+        "write_to_file",
+        "replace_file_content",
+        "multi_replace_file_content",
+        "search_web",
+        "read_url_content"
+      ]
+    }
+  }
+}

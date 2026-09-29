@@ -1,0 +1,8 @@
+{
+  "name": "redteam",
+  "kind": "review",
+  "summary": "Tries to break the change — hostile input, odd call order, partial failure, abuse of a feature; every claim needs a concrete failure scenario.",
+  "guide": "skills/cecilia-review/references/panel.md#redteam",
+  "when": "always in CONTROLLED; on request otherwise",
+  "rules_slot": "rules/lenses/redteam.md"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "tests",
+  "kind": "review",
+  "summary": "Would the tests catch a planted bug? Which error, boundary and concurrency cases are missing?",
+  "guide": "skills/cecilia-review/references/panel.md#tests",
+  "when": "any behaviour change; mandatory when tests are thin",
+  "rules_slot": "rules/lenses/tests.md"
+}

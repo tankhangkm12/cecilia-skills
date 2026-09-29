@@ -1,0 +1,42 @@
+{
+  "name": "cecilia-plan",
+  "agent_type": "writer",
+  "kind": "docs",
+  "description": "Cuts approved docs into batches with exact paths and cecilia-scope blocks, runs the challenge round, tracks progress. Never approves its own plan.",
+  "default_on": true,
+  "model": "strongest",
+  "consumes": [
+    "requirements",
+    "architecture",
+    "module-design",
+    "api-contract",
+    "reports"
+  ],
+  "produces": [
+    "plan",
+    "scope-blocks",
+    "report"
+  ],
+  "lane": [
+    "tensura/plans/**"
+  ],
+  "report": "tensura/reports/<TASK>/plan.md",
+  "review_guide": [
+    "references/review-plan.md"
+  ],
+  "rules_slot": "rules/roles/plan.md",
+  "lenses": null,
+  "overrides": {
+    "claude": {
+      "tools": null,
+      "disallowedTools": [
+        "Agent",
+        "NotebookEdit"
+      ]
+    },
+    "antigravity": {
+      "tools": null,
+      "model": "pro"
+    }
+  }
+}

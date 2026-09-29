@@ -1,0 +1,47 @@
+{
+  "name": "cecilia-db",
+  "agent_type": "writer",
+  "kind": "code",
+  "description": "Database specialist — schema, indexes, query plans, migrations, DB-side code, pools; growth forecasts, scaling options, engine selection by mechanism, backup/DR and personal-data controls. Local DB work follows the work mode; shared databases are A3 and production is Cecilia's.",
+  "default_on": true,
+  "model": "strongest",
+  "consumes": [
+    "module-design",
+    "architecture",
+    "api-contract",
+    "plan"
+  ],
+  "produces": [
+    "database-doc",
+    "migrations",
+    "db-code",
+    "report"
+  ],
+  "lane": [
+    "migrations/**",
+    "**/migrations/**",
+    "db/**",
+    "database/**",
+    "sql/**",
+    "prisma/**",
+    "tensura/docs/**/*-database.md"
+  ],
+  "report": "tensura/reports/<TASK>/db.md",
+  "review_guide": [
+    "references/review-database.md"
+  ],
+  "rules_slot": "rules/roles/db.md",
+  "lenses": null,
+  "overrides": {
+    "claude": {
+      "tools": null,
+      "disallowedTools": null
+    },
+    "antigravity": {
+      "tools": null,
+      "extra_tools": [
+        "call_mcp_tool"
+      ]
+    }
+  }
+}

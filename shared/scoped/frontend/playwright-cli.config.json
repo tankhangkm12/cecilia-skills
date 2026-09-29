@@ -1,0 +1,8 @@
+{
+  "browser": { "browserName": "chromium", "isolated": true },
+  "network": {
+    "allowedOrigins": ["http://localhost:*", "http://127.0.0.1:*", "https://localhost:*", "https://127.0.0.1:*"]
+  },
+  "outputDir": ".playwright-cli",
+  "timeouts": { "action": 5000, "navigation": 30000 }
+}

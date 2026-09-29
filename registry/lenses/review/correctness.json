@@ -1,0 +1,8 @@
+{
+  "name": "correctness",
+  "kind": "review",
+  "summary": "Does it do exactly what the requirements, AC and contract say — every ID, error code, state transition and edge case?",
+  "guide": "skills/cecilia-review/references/panel.md#correctness",
+  "when": "always",
+  "rules_slot": "rules/lenses/correctness.md"
+}

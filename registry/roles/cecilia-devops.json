@@ -1,0 +1,57 @@
+{
+  "name": "cecilia-devops",
+  "agent_type": "writer",
+  "kind": "code",
+  "description": "Pipeline, image, manifest and IaC assistant. Local edits follow the selected work mode; every live read/apply is A3 and production remains Cecilia's.",
+  "default_on": true,
+  "model": "strongest",
+  "consumes": [
+    "plan",
+    "architecture",
+    "repo"
+  ],
+  "produces": [
+    "pipelines",
+    "images",
+    "manifests",
+    "iac",
+    "infrastructure-doc",
+    "incident-reports",
+    "report"
+  ],
+  "lane": [
+    ".github/**",
+    ".gitlab-ci.yml",
+    "**/Dockerfile*",
+    "**/docker-compose*.yml",
+    "**/compose*.yaml",
+    "deploy/**",
+    "infra/**",
+    "k8s/**",
+    "helm/**",
+    "charts/**",
+    "terraform/**",
+    "**/*.tf",
+    "tensura/docs/system/infrastructure.md",
+    "tensura/docs/services/*/*-infrastructure.md"
+  ],
+  "report": "tensura/reports/<TASK>/devops.md",
+  "review_guide": [
+    "references/review-infra.md",
+    "references/review-release.md"
+  ],
+  "rules_slot": "rules/roles/devops.md",
+  "lenses": null,
+  "overrides": {
+    "claude": {
+      "tools": null,
+      "disallowedTools": null
+    },
+    "antigravity": {
+      "tools": null,
+      "extra_tools": [
+        "call_mcp_tool"
+      ]
+    }
+  }
+}

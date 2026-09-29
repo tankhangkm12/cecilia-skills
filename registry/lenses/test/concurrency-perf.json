@@ -1,0 +1,8 @@
+{
+  "name": "concurrency-perf",
+  "kind": "test",
+  "summary": "Races, idempotency under retries, locks, latency and throughput against computed budgets.",
+  "guide": "skills/cecilia-test/references/lenses/concurrency-perf.md",
+  "when": "shared state, money/stock/quota, queues, hot paths, list endpoints",
+  "rules_slot": "rules/lenses/concurrency-perf.md"
+}

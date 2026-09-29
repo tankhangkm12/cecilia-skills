@@ -1,0 +1,8 @@
+{
+  "name": "ui",
+  "kind": "test",
+  "summary": "A real browser: every state and breakpoint, accessibility (keyboard, contrast, labels), visual diff.",
+  "guide": "skills/cecilia-test/references/lenses/ui.md",
+  "when": "frontend screens, components, design tokens",
+  "rules_slot": "rules/lenses/ui.md"
+}

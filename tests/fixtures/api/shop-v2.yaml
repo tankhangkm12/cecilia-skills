@@ -1,0 +1,116 @@
+openapi: 3.0.3
+info:
+  title: Shop API
+  version: "1.0"
+paths:
+  /products:
+    get:
+      summary: List products
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: ok
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Product"
+        "400":
+          description: bad
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /products/{id}:
+    get:
+      responses:
+        "200":
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Product"
+  /orders:
+    get:
+      parameters:
+        - name: offset
+          in: query
+          schema: {type: integer}
+      responses:
+        "200":
+          description: ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Order"
+    post:
+      description: |
+        Places an order.
+        Stock is decremented with an optimistic lock.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [items, addressId]
+              properties:
+                items:
+                  type: array
+      responses:
+        "201":
+          description: created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Order"
+        "422":
+          description: invalid
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code: {type: string}
+                  msg: {type: string}
+  /shop-vouchers:
+    get:
+      parameters:
+        - name: cursor
+          in: query
+          schema: {type: string}
+      responses:
+        "200":
+          description: ok
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id: {type: string}
+        name: {type: string}
+        price: {type: number}
+
+        createdAt: {type: string}
+    Order:
+      type: object
+      properties:
+        id: {type: string}
+        total: {type: number}
+        status:
+          type: string
+          enum: [pending, paid, shipped]
+    Error:
+      type: object
+      properties:
+        error: {type: string}
+        message: {type: string}
